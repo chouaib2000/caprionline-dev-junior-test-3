@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Rating, Spinner } from 'flowbite-react';
+import { Component } from './Component';
 
 const App = props => {
   const [movies, setMovies] = useState([]);
@@ -23,7 +24,9 @@ const App = props => {
   return (
     <Layout>
       <Heading />
-
+      <div className='mb-[10px]' >
+      <Component setMovies={setMovies} movies={movies} />
+      </div>
       <MovieList loading={loading}>
         {movies.map((item, key) => (
           <MovieItem key={key} {...item} />
